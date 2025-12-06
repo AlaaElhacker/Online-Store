@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-form {
+            background-color: #fff;
+            padding: 35px 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 430px;
+            margin-bottom: 20px;
+        }
+
+        .product-form h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        .product-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .product-form input,
+        .product-form textarea {
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 18px;
+            border-radius: 7px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: 0.25s;
+        }
+
+        .product-form input:focus,
+        .product-form textarea:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 6px rgba(0,123,255,0.25);
+        }
+
+        .product-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 17px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .product-form button:hover {
+            background-color: #0069d9;
+            transform: scale(1.02);
+        }
+
+        .btn {
+            text-decoration: none;
+            /* padding: 12px 25px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.25s; */
+            font-size: 15px;
+        }
+        span{
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* .btn:hover {
+            background-color: #218838;
+            transform: scale(1.03);
+        } */
+    </style>
+</head>
+
+<body>
+
+    <form class="product-form" action="../php/Products.php" method="POST">
+        <h2>Add New Product</h2>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="Description" rows="2"></textarea>
+
+        <label for="price">Price</label>
+        <input type="number" step="0.01" id="price" name="Price" required>
+
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" name="Stock" required>
+
+        <label for="category">Category</label>
+        <input type="number" id="category" name="CategoryID" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="../HTMLs/Product Update.html"class="btn">Already Existing Product? <span>Click Here</span></a>
+
+</body>
+</html>
