@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1f1f47, #33336f, #5a60a5);
+            font-family: "Segoe UI", sans-serif;
+            color: white;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.3);
+            backdrop-filter: blur(8px);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 34px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.4);
+        }
+
+        .menu {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .btn {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 18px;
+            border-radius: 15px;
+            font-weight: bold;
+            transition: 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-5px);
+        }
+
+        .admin {
+            border-color: #ffae58;
+            background: rgba(255, 174, 88, 0.25);
+        }
+
+        .queries {
+            border-color: #4fc3f7;
+            background: rgba(79, 195, 247, 0.25);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <div class="menu">
+
+            <a href="customers.html" class="btn">👥 Add Customer</a>
+            <a href="makeorder.html" class="btn">🛒 Make Order</a>
+            <a href="products.html" class="btn">📦 Add Product</a>
+            <a href="categories.html" class="btn">📂 Add Category</a>
+
+            <a href="cobons.html" class="btn admin">🎟️ Add Coupon</a>
+
+            <a href="Payment.html" class="btn">💳 Add Payment</a>
+
+            <a href="../php/dashboard.html" class="btn queries">📊 View SQL Queries</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Place Multi-Product Order</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+.order-container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.order-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+}
+form input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.product-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+.product-row input {
+    flex: 1;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+#addProduct {
+    background-color: #2196F3;
+    color: white;
+}
+#addProduct:hover {
+    background-color: #1976d2;
+}
+.message {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<div class="order-container">
+    <h2>Place Your Order</h2>
+    <form id="orderForm" action="../php/Order.php" method="POST">
+        <label for="customer_id">Customer ID:</label>
+        <input type="number" name="customer_id" id="customer_id" required>
+
+        <div id="products-wrapper">
+            <div class="product-row">
+                <label>Product ID:</label>
+                <input type="number" name="product_id[]" placeholder="Enter Product ID" required>
+
+                <label>Quantity:</label>
+                <input type="number" name="quantity[]" min="1" value="1" required>
+            </div>
+        </div>
+
+        <button type="button" id="addProduct">➕ Add Another Product</button>
+        <button type="submit">Place Order</button>
+    </form>
+    <div class="message"></div>
+</div>
+
+<script>
+document.getElementById('addProduct').addEventListener('click', function(){
+    const wrapper = document.getElementById('products-wrapper');
+    const newRow = wrapper.querySelector('.product-row').cloneNode(true);
+    newRow.querySelectorAll('input')[0].value = ''; // Product ID
+    newRow.querySelectorAll('input')[1].value = 1; // Quantity
+    wrapper.appendChild(newRow);
+});
+</script>
+
+</body>
+</html>
